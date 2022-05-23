@@ -6,11 +6,15 @@ formLoginEL.addEventListener("submit", getInputValues);
 
 function getInputValues(event) {  
     event.preventDefault();
+
+    const {
+        elements: { email, password }
+    } = event.currentTarget;
     
-    if (event.currentTarget.elements.email.value && event.currentTarget.elements.password.value !== "") {
+    if (email.value && password.value !== "") {
         const formValues = {
-            email: `${event.currentTarget.elements.email.value}`,
-            password: `${event.currentTarget.elements.password.value}`,
+            email: `${email.value}`,
+            password: `${password.value}`,
         };
          console.log(formValues);
     } else {
